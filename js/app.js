@@ -1,37 +1,18 @@
 console.log('JS funziona');
 
-//richiamo l'elemento in cui andrá il div .cell
+//richiamo button play
+const playButton = document.getElementById('play-btn');
+
+// faccio click sul bottone play
+playButton.addEventListener('click', function() {
+    //richiamo l'elemento in cui andrá il div .cell
 const gridElement = document.querySelector('.grid-cells');
 // console.log(gridElement);
-
+const difficultyChoice = document.getElementById('difficult-select');
+    console.log(difficultyChoice.value)
 
 //stabilisco quante celle sono presenti in una riga
-let size = 10;
-
-const difficultLevel1 = document.getElementById('level 1')
-// console.log(difficultLevel1);
-const difficultLevel2 = document.getElementById('level 2')
-// console.log(difficultLevel2);
-const difficultLevel3 = document.getElementById('level 3')
-// console.log(difficultLevel3);
-
-difficultLevel1.addEventListener('click', function(){
-    
-    size = 10
-    console.log(size)
-})
-
-
-difficultLevel2.addEventListener('click', function(){
-    
-    size = 9
-    console.log(size)
-})
-
-difficultLevel3.addEventListener('click', function(){
-    
-    size = 7
-})
+let size = parseInt(difficultyChoice.value);
 
 // stabilisco il numero di celle presenti nella griglia
 const numberOfCells = size * size;
@@ -45,6 +26,8 @@ for (let index = 0; index < numberOfCells; index++) {
     const cellElement = document.createElement('div');
     // aggiungo la classe al div
     cellElement.className = 'cell';
+    // aggiungo la classe per modificare la riga della griglia
+    cellElement.className += ` cell-${size}`;
     //aggiungo il numero a ogni cell
     cellElement.innerHTML = number;
     
@@ -63,6 +46,8 @@ for (let index = 0; index < numberOfCells; index++) {
     }   
     )
 }
+})
+
 
 
 

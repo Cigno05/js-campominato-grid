@@ -47,8 +47,10 @@ header {
 
 .grid-cells {
     margin-top: 30px;
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+   
 }
 
 .cell {
@@ -59,9 +61,20 @@ header {
     justify-content: flex-end;
     align-items: flex-end;
     padding: 1px;
-    margin: 0.5px;
+    
 }
 
+.cell-10 {
+    width: calc(100% / 10);
+}
+
+.cell-9 {
+    width: calc(100% / 9);
+}
+
+.cell-7 {
+    width: calc(100% / 7);
+}
 .bg-dark {
     background-color: black;
     color: aquamarine;
