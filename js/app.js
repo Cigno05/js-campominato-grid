@@ -5,11 +5,14 @@ const playButton = document.getElementById('play-btn');
 
 // faccio click sul bottone play
 playButton.addEventListener('click', function() {
+
+
     //richiamo l'elemento in cui andrá il div .cell
-const gridElement = document.querySelector('.grid-cells');
+let gridElement = document.querySelector('.grid-cells');
 // console.log(gridElement);
 const difficultyChoice = document.getElementById('difficult-select');
-    console.log(difficultyChoice.value)
+console.log(difficultyChoice.value)
+
 
 //stabilisco quante celle sono presenti in una riga
 let size = parseInt(difficultyChoice.value);
@@ -17,10 +20,16 @@ let size = parseInt(difficultyChoice.value);
 // stabilisco il numero di celle presenti nella griglia
 const numberOfCells = size * size;
 
+// // gridElement vuoto per non accumulare la generazione di cartelle
+   gridElement.innerHTML = '';
+
 //uso un ciclo for per richiamare i singolei elementi
 for (let index = 0; index < numberOfCells; index++) {
     const number = index + 1;
     // console.log(number);
+    
+    
+
 
     // creo l'elemento che andró a mettere dentro gridElement
     const cellElement = document.createElement('div');
@@ -38,7 +47,7 @@ for (let index = 0; index < numberOfCells; index++) {
     
     //assegno una classe cambia colore all'elemento al momento del click
     cellElement.addEventListener('click', function() {
-        // console.log('click', number)
+        // console.log('click on ', number)
         
         //aggiungo/tolgo la classe all'elemento cliccato
         cellElement.classList.toggle('bg-dark');

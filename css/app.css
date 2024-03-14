@@ -37,6 +37,7 @@ header {
     color: black;
     border: 1px solid black;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 /* MAIN */
@@ -57,9 +58,10 @@ header {
     border: 2px solid blue;
     color: lightslategray;
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: center;
     padding: 1px;
+    cursor: pointer;
     
 }
 
